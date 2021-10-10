@@ -15,6 +15,11 @@
 #define M1 0
 #define M2 1
 
+/*
+ * On ESP32:
+ * SCL = GPIO 22
+ * SCA = GPIO 21
+ */
 #define IS31FL3730_SDB 26
 #define BUTTON_WIFI_RESET 19
 #define HOSTNAME "LM-CLOCKI"
