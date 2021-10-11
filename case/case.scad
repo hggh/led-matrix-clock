@@ -56,6 +56,24 @@ translate([21.596,1, 20.251]) {
 */
 
 
+// front inlay
+
+translate([100, 0, 0]) {
+    difference() {
+        cuboid([90, 1.2, 55], fillet=22, 
+            edges=EDGES_Y_ALL, align=V_ALLPOS);
+        translate([19.596, -1, 18.251]) {
+            cube([50.790, 10, 18.509]);
+        }
+    }
+    translate([32.506, 0, 4.749]) {
+        rotate([90, 0, 0]) cylinder(d=3, h=5);
+    }
+    translate([57.506, 0, 4.749]) {
+        rotate([90, 0, 0]) cylinder(d=3, h=5);
+    }
+}
+
 
 
 
