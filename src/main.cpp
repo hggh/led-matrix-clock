@@ -1,7 +1,11 @@
 #include <Arduino.h>
+#ifdef ESP32
 #include <SPIFFS.h>
 #include <WiFi.h>
 #include <WiFiClient.h>
+#else
+#include <ESP8266WiFi.h>
+#endif
 #include <time.h>
 #include <Wire.h>
 #include <FS.h>
@@ -20,8 +24,13 @@
  * SCL = GPIO 22
  * SCA = GPIO 21
  */
+#ifdef ESP32
 #define IS31FL3730_SDB 26
 #define BUTTON_WIFI_RESET 19
+#else
+#define IS31FL3730_SDB 15
+#define BUTTON_WIFI_RESET 2
+#endif
 #define HOSTNAME "LM-CLOCKI"
 
 IS31FL3730 m1;
@@ -70,7 +79,6 @@ void wm_config_mode_callback(WiFiManager *myWiFiManager) {
 
 void setup() {
   Serial.begin(115200);
-  btStop();
   WiFi.mode(WIFI_STA);
   WiFi.setHostname(HOSTNAME);
 
@@ -91,10 +99,12 @@ void setup() {
   m2.set_le(0x9);
   m3.set_le(0x9);
 
-
+#ifdef ESP32
+  btStop();
   if(!SPIFFS.begin(true)){
     Serial.println("error on SPIFFS...");
   }
+#endif
   wm.setAPCallback(wm_config_mode_callback);
   wm.autoConnect(HOSTNAME, "");
 
@@ -106,7 +116,12 @@ void setup() {
 void loop() {
   wifi_cfg_reset.update();
   struct tm timedate;
+#ifdef ESP32
   getLocalTime(&timedate);
+#else
+  time_t now = time(&now);
+  localtime_r(&now, &timedate);
+#endif
 
   if (wifi_cfg_reset.pressed()) {
     // WiFi reset configuration button was pressed
