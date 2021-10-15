@@ -23,21 +23,22 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="240.61584"
-     inkscape:cy="527.00448"
+     inkscape:zoom="4.0000002"
+     inkscape:cx="521.84831"
+     inkscape:cy="304.05367"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:snap-bbox="true"
-     inkscape:snap-bbox-midpoints="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1163"
-     inkscape:window-x="1920"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:snap-bbox-edge-midpoints="true" />
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:window-width="1564"
+     inkscape:window-height="974"
+     inkscape:window-x="2010"
+     inkscape:window-y="76"
+     inkscape:window-maximized="0"
+     inkscape:snap-bbox-edge-midpoints="false"
+     inkscape:bbox-nodes="true" />
   <metadata
      id="metadata929">
     <rdf:RDF>
@@ -670,5 +671,47 @@
        height="2.5885315"
        x="22.100853"
        y="152.25488" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.2394;stroke-linecap:square;paint-order:fill markers stroke"
+       id="rect1005"
+       width="53.609364"
+       height="50"
+       x="42.296173"
+       y="45.843422" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.252847;stroke-linecap:square;paint-order:fill markers stroke"
+       id="rect1007"
+       width="40"
+       height="10"
+       x="49.2519"
+       y="63.46011" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.329465;stroke-linecap:square;paint-order:fill markers stroke"
+       id="rect1008"
+       width="42.5"
+       height="12.5"
+       x="114.48123"
+       y="68.075745" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.302123;stroke-linecap:square;paint-order:fill markers stroke"
+       id="rect1010"
+       width="5"
+       height="5"
+       x="125.31123"
+       y="71.825745" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.143314;stroke-linecap:square;paint-order:fill markers stroke"
+       id="rect1012"
+       width="10.830002"
+       height="3.75"
+       x="114.48123"
+       y="76.825745" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.302123;stroke-linecap:square;paint-order:fill markers stroke"
+       id="rect1010-3"
+       width="5"
+       height="5"
+       x="141.15123"
+       y="71.825745" />
   </g>
 </svg>
