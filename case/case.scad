@@ -76,6 +76,13 @@ translate([100, 0, 0]) {
     }
 }
 
+//button holder
+translate([150, 0, 0]) {
+    difference() {
+        cube([10, 14 + 3 + 3, 7.5 + 2]);
+        translate([0, 3, 2]) cube([10, 14, 7.5]);
+    }
+}
 
             
 
