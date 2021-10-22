@@ -77,6 +77,22 @@ void wm_config_mode_callback(WiFiManager *myWiFiManager) {
 }
 
 
+void blinkSecond(void *parameter) {
+  bool second_status = false;
+  for(;;) {
+    if (second_status) {
+      display_char(&m2, M2, char_5x7_COLON);
+    }
+    else {
+      display_char(&m2, M2, char_5x7_BLANK);
+    }
+    m2.update();
+    second_status = !second_status;
+    delay(1000);
+  }
+  vTaskDelete(NULL);
+}
+
 void setup() {
   Serial.begin(115200);
   WiFi.mode(WIFI_STA);
@@ -98,6 +114,15 @@ void setup() {
   m1.set_le(0x9);
   m2.set_le(0x9);
   m3.set_le(0x9);
+
+  xTaskCreate(
+    blinkSecond,
+    "BlinkSecond",
+    10000,
+    NULL,
+    1,
+    NULL
+  );
 
 #ifdef ESP32
   btStop();
@@ -151,7 +176,6 @@ void loop() {
 
     display_number(&m1, M2, t_first_hour);
     display_number(&m1, M1, t_second_hour);
-    display_char(&m2, M2, char_5x7_COLON);
     display_number(&m2, M1, t_first_minute);
     display_number(&m3, M2, t_second_minute);
 
