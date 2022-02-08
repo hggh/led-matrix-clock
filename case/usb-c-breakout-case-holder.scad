@@ -45,7 +45,7 @@ module pcb() {
 difference() {
     union() {
         cube([35, 2, 15]);
-        translate([(35-20.5)/2, 0, 3]) {
+        translate([(35-20.5)/2, 0, 1]) {
             cube([20.5, 12, 4]);
         }
         translate([0, 2, 2]) cube([7, 5, 10]);
@@ -61,7 +61,25 @@ difference() {
         translate([0, 3, 0])
         rotate([270, 30, 0]) cylinder(r = 5.5 / 2 / cos(180 / 6) + 0.05, h=4.1, $fn=6);
     }
-    translate([((35-20.5)/2), 0, (15-2.56)/2]) {
+    translate([((35-20.5)/2), 0, (15-2.56)/2-2]) {
         pcb();
+    }
+}
+
+
+translate([60, 0, 0]) {
+    difference() {
+        union() {
+            cube([35, 12, 15]);
+        }
+        translate([7.5, -1, 1.5]) {
+            cube([20, 200, 12]);
+        }
+        translate([3.5, 0, 15/2]) {
+            rotate([270, 0, 0]) cylinder(d=3.2, h=200, $fn=190);
+        }
+        translate([35-3.5, 0, 15/2]) {
+            rotate([270, 0, 0]) cylinder(d=3.2, h=200, $fn=190);
+        }
     }
 }
